@@ -1,0 +1,117 @@
+body, html {
+    height: 100%;
+}
+
+.home-header{
+    background-color: $deep;
+    height: 100%;
+    color: #fff;
+}
+
+.top-line {
+    position: absolute;
+    width: 100%;
+    height: $size;
+    top: 0;
+    border-bottom: 1px solid rgba(#fff, $border-opacity);
+    z-index: 10;
+    background-color: $deep;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    flex: 0 0 200px;
+    display: flex;
+    align-items:center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .5em;
+    text-decoration: none;
+    &:hover, &:focus {
+        color: #fff;
+    }
+}
+
+.logo__img-wrapper{
+    width: $size;
+    height: $size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button-container {
+    flex: 0 0 200px;
+    text-align: right;
+    position: relative;
+    height: $size;
+}
+
+.menu-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $size;
+    height: $size;
+    background-color: #3C3C3C;
+    background-image: url(../images/dist/bars-solid.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background .25s ease-out;
+    &:hover{
+        background-color: $accent;
+    }
+
+}
+
+.top-line__decoration {
+    flex: 1 0 0;
+    text-align: center;
+    &::before {
+        content: '';
+        height: 1px;
+        width: 50px;
+        background-color: #fff;
+        display: inline-block;
+        opacity: $border-opacity*1.5;
+        position: relative;
+        top: -5px;
+    }
+}
+
+.top-line__contacts {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .4em;
+    color: rgba($color: #fff, $alpha: .5);
+    display: flex;
+    align-items: center;
+}
+
+.top-line__separator {
+    width: 1px;
+    height: 30px;
+    background-color:rgba($color: #fff, $alpha: $border-opacity*2);
+    margin: 0 20px;
+}
+
+.top-line__numbers,
+.top-line__text {
+    font-family: roboto-vh, sans-serif;
+    margin-left: 7px;
+    a {
+        color: $accent;
+    }
+}
+
+.top-line__numbers {
+    color: $accent;
+}
+
+.top-line__text {
+    color:rgba($color: #fff, $alpha: .75);
+}
