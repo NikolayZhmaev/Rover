@@ -1,11 +1,13 @@
-body, html {
+body,
+html {
     height: 100%;
 }
 
-.home-header{
+.home-header {
     background-color: $deep;
     height: 100%;
     color: #fff;
+    padding-top: $size;
 }
 
 .top-line {
@@ -23,19 +25,21 @@ body, html {
 .logo {
     flex: 0 0 200px;
     display: flex;
-    align-items:center;
+    align-items: center;
     color: #fff;
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: .5em;
     text-decoration: none;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         color: #fff;
     }
 }
 
-.logo__img-wrapper{
+.logo__img-wrapper {
     width: $size;
     height: $size;
     display: flex;
@@ -61,7 +65,8 @@ body, html {
     background-repeat: no-repeat;
     background-position: center;
     transition: background .25s ease-out;
-    &:hover{
+
+    &:hover {
         background-color: $accent;
     }
 
@@ -70,6 +75,7 @@ body, html {
 .top-line__decoration {
     flex: 1 0 0;
     text-align: center;
+
     &::before {
         content: '';
         height: 1px;
@@ -95,7 +101,7 @@ body, html {
 .top-line__separator {
     width: 1px;
     height: 30px;
-    background-color:rgba($color: #fff, $alpha: $border-opacity*2);
+    background-color: rgba($color: #fff, $alpha: $border-opacity*2);
     margin: 0 20px;
 }
 
@@ -103,6 +109,7 @@ body, html {
 .top-line__text {
     font-family: roboto-vh, sans-serif;
     margin-left: 7px;
+
     a {
         color: $accent;
     }
@@ -113,5 +120,147 @@ body, html {
 }
 
 .top-line__text {
-    color:rgba($color: #fff, $alpha: .75);
+    color: rgba($color: #fff, $alpha: .75);
 }
+
+//ASIDE
+
+.home-header__content {
+    height: 100%;
+}
+
+.home-aside {
+    background-color: $dark;
+    width: $size;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding-top: $size;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.home-aside__decoration {
+    flex: 1 0 0;
+    background-image: url(../images/dist/decoration.svg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.home-aside__soc {
+    flex: 1 0 0;
+}
+
+.home-aside__share-icon {
+    background-color: $accent;
+    width: $size;
+    flex: 0 0 $size;
+    background-image: url(../images/dist/share-solid.svg);
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.soc-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(#fff, $border-opacity);
+    border-bottom: 1px solid transparent;
+    margin-top: -1px;
+    transition: background .5s ease-out;
+
+    &:last-child {
+        border-bottom: 1px solid rgba(#fff, $border-opacity);
+    }
+
+    img {
+        width: 15px;
+        height: auto;
+        max-height: 15px;
+        opacity: .3;
+        transition: opacity .5s ease-out;
+    }
+
+    &:hover {
+        background-color: $accent;
+
+        img {
+            opacity: 1;
+        }
+    }
+}
+
+//SLIDER
+
+.slider-container {
+    padding-left: $size;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-bottom {
+    position: absolute;
+    bottom: 0;
+    height: $size;
+    display: flex;
+    align-items: center;
+    left: $size;
+    z-index: 5;
+    width: calc(75% - #{$size});    
+}
+
+.slider-share {
+    flex: 0 1 auto;
+}
+
+.slider-pagination {
+    flex: 0 0 140px;
+
+}
+
+.slider-scrollbar {
+   flex: 1 0 0; 
+}
+
+.slider-navigation {
+    flex: 0 0 140px;
+}
+
+.slider-share__items {
+    display: flex;
+    position: relative;
+    
+}
+
+.slider-share__item {
+    width: $size;
+    height: $size;
+    border: none;
+    border-color: $dark;
+    border-right: 1px solid rgba(#fff, $border-opacity);
+    margin-left: -.5px;
+    &:last-child {
+        border: none;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background-color: $accent;
+        }
+    }
+}
+
+
