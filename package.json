@@ -42,7 +42,9 @@
     "webpack": "^5.68.0",
     "webpack-stream": "^7.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "swiper": "^8.0.7"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NikolayZhmaev/Rover.git"

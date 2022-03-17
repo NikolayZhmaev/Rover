@@ -216,7 +216,7 @@ html {
     align-items: center;
     left: $size;
     z-index: 5;
-    width: calc(75% - #{$size});    
+    width: calc(75% - #{$size});
 }
 
 .slider-share {
@@ -229,7 +229,7 @@ html {
 }
 
 .slider-scrollbar {
-   flex: 1 0 0; 
+    flex: 1 0 0;
 }
 
 .slider-navigation {
@@ -239,7 +239,7 @@ html {
 .slider-share__items {
     display: flex;
     position: relative;
-    
+
 }
 
 .slider-share__item {
@@ -249,8 +249,10 @@ html {
     border-color: $dark;
     border-right: 1px solid rgba(#fff, $border-opacity);
     margin-left: -.5px;
+
     &:last-child {
         border: none;
+
         &::after {
             content: '';
             position: absolute;
@@ -263,4 +265,30 @@ html {
     }
 }
 
+.slider-img {
+    height: 100%;
+    width: 75%;
+    overflow: hidden;
+    position: absolute;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .45);
+        z-index: 2;
+    }
 
+}
+
+.slider-img__slide {
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.slider-img__gb {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
