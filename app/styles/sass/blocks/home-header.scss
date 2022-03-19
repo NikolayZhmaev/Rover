@@ -224,19 +224,6 @@ html {
     background-color: #303030;
 }
 
-.slider-pagination {
-    flex: 0 0 140px;
-
-}
-
-.slider-scrollbar {
-    flex: 1 0 0;
-}
-
-.slider-navigation {
-    flex: 0 0 140px;
-}
-
 .slider-share__items {
     display: flex;
     position: relative;
@@ -320,7 +307,8 @@ html {
     font-family: oswald-vh, sans-serif;
     max-width: 780px;
     float: right;
-    span{
+
+    span {
         color: $accent;
         white-space: nowrap; // отменяем перенос текста
     }
@@ -332,10 +320,103 @@ html {
     font-size: 13px;
     font-weight: 500;
     margin-top: 15px;
-    margin-bottom: 20px;   
+    margin-bottom: 20px;
 }
 
 .slider-text__button {
     float: right;
     clear: both;
+}
+
+.slider-pagination {
+    flex: 0 0 140px;
+    display: flex;
+    justify-content: center;
+    height: $size;
+    align-items: center;
+
+    .swiper-pagination {
+        position: relative;
+        bottom: 0;
+
+    }
+
+    .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        opacity: 1;
+        background-color: #fff;
+        margin: 0 7.5px;
+    }
+
+
+    .swiper-pagination-bullet-active {
+        background-color: $accent;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 14px;
+            height: 14px;
+            border: 1px solid $accent;
+            position: absolute;
+            border-radius: 100%;
+            left: -4px;
+            top: -4px;
+        }
+    }
+}
+
+.slider-scrollbar {
+    flex: 1 0 0;
+
+    .swiper-scrollbar {
+        height: 1px;
+        background-color: rgba(#fff, .2);
+    }
+
+    .swiper-scrollbar-drag {
+        height: 3px;
+        background-color: $accent;
+        top: -1px;
+    }
+}
+
+.slider-navigation__container {
+        position: relative;
+        max-width: 70px;
+        margin: auto;
+}
+
+.slider-navigation {
+    flex: 0 0 140px;
+    position: relative;
+    left: 10px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 32px;
+        height: 32px;
+        color: $accent;
+        background-color: #3c3c3c;
+        border: 2px solid $accent;
+        border-radius: 100%;
+        top: 5px;
+
+        &::after {
+            font-size: 10px;
+        }
+
+        &.swiper-button-disabled {
+            opacity: 1;
+            color: #8a8a8a;
+            border-color: #8a8a8a;
+        }
+    }
+    .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-button-next {
+        right: 0;
+    }   
 }

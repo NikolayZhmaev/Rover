@@ -9,8 +9,9 @@
     border: none;
     position: relative;
     padding: 16px 26px;
+
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         width: 0;
         height: 100%;
@@ -19,12 +20,15 @@
         left: 0;
         transition: width .5s ease-out;
     }
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         &::before {
             width: 100%;
         }
 
     }
+
     span {
         position: relative;
         z-index: 2;

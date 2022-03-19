@@ -1,5 +1,13 @@
-import { Swiper, Parallax, Mousewheel, Controller } from 'swiper';
-Swiper.use([ Parallax, Mousewheel, Controller ])
+import {
+	Swiper,
+	Parallax,
+	Mousewheel,
+	Controller,
+	Pagination,
+	Scrollbar,
+	Navigation
+} from 'swiper';
+Swiper.use([Parallax, Mousewheel, Controller, Pagination, Scrollbar, Navigation])
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		loop: false, //не используем зацикленную карусель
 		speed: 2400,
 		parallax: true,
-		
 	})
 
 	const swiperText = new Swiper('.slider-text', {
@@ -16,6 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		speed: 2400,
 		mousewheel: {
 			invert: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
+		navigation: {
+			prevEl: '.swiper-button-prev',
+			nextEl: '.swiper-button-next',
 		}
 
 	})
