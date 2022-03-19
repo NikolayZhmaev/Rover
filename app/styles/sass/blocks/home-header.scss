@@ -221,6 +221,7 @@ html {
 
 .slider-share {
     flex: 0 1 auto;
+    background-color: #303030;
 }
 
 .slider-pagination {
@@ -269,7 +270,8 @@ html {
     height: 100%;
     width: 75%;
     overflow: hidden;
-    position: absolute;
+    position: relative;
+
     &::before {
         content: '';
         position: absolute;
@@ -287,8 +289,53 @@ html {
 
 }
 
-.slider-img__gb {
+.slider-img__bg {
     height: 100%;
     background-position: center;
     background-size: cover;
+}
+
+.slider-text {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: calc(100% - #{$size});
+}
+
+.slider-text__slide {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slider-text__content {
+    text-align: right;
+    padding-right: 22%;
+}
+
+.slider-text__heading {
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 120%;
+    font-family: oswald-vh, sans-serif;
+    max-width: 780px;
+    float: right;
+    span{
+        color: $accent;
+        white-space: nowrap; // отменяем перенос текста
+    }
+}
+
+.slider-text__desc {
+    float: right;
+    max-width: 500px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 20px;   
+}
+
+.slider-text__button {
+    float: right;
+    clear: both;
 }

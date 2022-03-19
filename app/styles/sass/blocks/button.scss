@@ -1,0 +1,32 @@
+.button {
+    display: inline-block;
+    background-color: $accent;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    position: relative;
+    padding: 16px 26px;
+    &::before {
+        content:'';
+        position: absolute;
+        width: 0;
+        height: 100%;
+        background-color: $dark;
+        top: 0;
+        left: 0;
+        transition: width .5s ease-out;
+    }
+    &:hover, &:focus {
+        &::before {
+            width: 100%;
+        }
+
+    }
+    span {
+        position: relative;
+        z-index: 2;
+    }
+}
