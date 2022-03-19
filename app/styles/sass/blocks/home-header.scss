@@ -321,6 +321,7 @@ html {
     font-weight: 500;
     margin-top: 15px;
     margin-bottom: 20px;
+    clear: both;
 }
 
 .slider-text__button {
@@ -383,9 +384,9 @@ html {
 }
 
 .slider-navigation__container {
-        position: relative;
-        max-width: 70px;
-        margin: auto;
+    position: relative;
+    max-width: 70px;
+    margin: auto;
 }
 
 .slider-navigation {
@@ -413,10 +414,60 @@ html {
             border-color: #8a8a8a;
         }
     }
+
     .swiper-button-prev {
         left: 0;
     }
+
     .swiper-button-next {
         right: 0;
-    }   
+    }
+}
+
+.slider-gear {
+    width: 470px;
+    height: 470px;
+    position: absolute;
+    background-image: url(../images/dist/gear.svg);
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    margin-top: -270px;
+    right: calc(23.8% - 235px);
+    z-index: 2;
+}
+
+.slider-pagination-count {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 100;
+    width: 120px;
+    height: 80px;
+    font-family: oswald-vh, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+
+    .current {
+        font-size: 40px;
+        color: $accent;
+        display: inline-block;
+        min-width: 42px;
+    }
+}
+
+.slider-pagination-current {
+    position: absolute;
+    right: 40px;
+    bottom: 10px;
+    font-size: 100px;
+    font-family: oswald-vh, sans-serif;
+    color: $deep;
+    -webkit-text-stroke: 1px #7f7f7f; // обрисовка текста
+
+    &__dot {
+        color: $accent;
+        -webkit-text-stroke: 1px transparent;
+    }
+
 }
