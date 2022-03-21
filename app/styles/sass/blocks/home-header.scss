@@ -335,10 +335,12 @@ html {
     justify-content: center;
     height: $size;
     align-items: center;
+    position: relative;
+    
 
     .swiper-pagination {
-        position: relative;
-        bottom: 0;
+        bottom: 22px
+
 
     }
 

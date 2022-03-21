@@ -17,8 +17,21 @@ import {
 	Power2
 } from 'gsap';
 
+import MicroModal from 'micromodal';
+
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	//Modal
+
+	MicroModal.init({
+		openTrigger: 'data-micromodal-open',
+		closeTrigger: 'data-micromodal-close',
+		disableFocus: true,
+		disableScroll: true,
+		awaitOpenAnimation: true,
+		awaitCloseAnimation: true
+	});
 
 	//Swiper
 
@@ -30,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			el: '.slider-pagination-count .total',
 			type: 'custom',
 			renderCustom: function (swiper, current, total) {
-				return `0${total}`
+				let totalRes = total >= 10 ? total : `0${total}`;
+				return totalRes;
 			}
 		}
 	});
@@ -81,33 +95,34 @@ document.addEventListener('DOMContentLoaded', () => {
 	//Slide Change
 
 	let curnum = document.querySelector('.slider-pagination-count .current'),
-		pagcur = document.querySelector('.slider-pagination-current__num')
+		pagcur = document.querySelector('.slider-pagination-current__num');
 
 	swiperText.on('slideChange', function () {
-		let ind = swiperText.realIndex + 1
-		gsap.to(curnum, .2, {
+		let ind = swiperText.realIndex + 1,
+		    indRes = ind >= 10 ? ind : `0${ind}`;
+		gsap.to(curnum, 0.2, {
 			force3D: true,
 			y: -10,
 			opacity: 0,
 			ease: Power2.easeOut,
 			onComplete: function () {
-				gsap.to(curnum, .1, {
+				gsap.to(curnum, 0.1, {
 					force3D: true,
 					y: 10
-				})
-				curnum.innerHTML = `0${ind}`;
-				pagcur.innerHTML = `0${ind}`;
+				});
+				curnum.innerHTML = indRes;
+				pagcur.innerHTML = indRes;
 
 			}
 
-		})
-		gsap.to(curnum, .2, {
+		});
+		gsap.to(curnum, 0.2, {
 			force3D: true,
 			y: 0,
 			opacity: 1,
 			ease: Power2.easeOut,
-			delay: .3
-		})
-	})
+			delay: 0.3
+		});
+	});
 
 });

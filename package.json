@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "gsap": "^3.9.1",
+    "micromodal": "^0.4.10",
     "swiper": "^8.0.7"
   },
   "repository": {
